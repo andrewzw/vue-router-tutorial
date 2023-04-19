@@ -3,9 +3,13 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/user">User</router-link> |
-
   </nav>
-  <router-view/>
+
+  <router-view v-slot="{Component}">
+    <transition name="slide" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style>
@@ -29,4 +33,16 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s;
+}
+.slide-enter {
+  transform: translateX(100%);
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
 </style>
