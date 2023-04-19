@@ -1,27 +1,30 @@
 <template>
-  <div>
-    <h1>This is the homepage</h1>
-    <p>This is a tutorial template by Andrew Yap Zhe Wei (103508895)</p>
-
-    <section>
-      <h2>Topics Covered in this tutorial</h2>
-      <div class="card-container">
-        <div class="card" v-for="(topic, index) in topics" :key="index">
-          <h3>{{ topic.title }}</h3>
-          <p>{{ topic.description }}</p>
-        </div>
-      </div>
-    </section>
 
     <div>
-      <h3>Go to user profile</h3>
-      <router-link to="/user">User Profile</router-link>
+      <h1>This is the homepage</h1>
+      <p>This is a tutorial template by Andrew Yap Zhe Wei (103508895)</p>
+
+      <section>
+        <h2>Topics Covered in this tutorial</h2>
+        <div class="card-container">
+          <div class="card" v-for="(topic, index) in topics" :key="index">
+            <h3>{{ topic.title }}</h3>
+            <p>{{ topic.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <div>
+        <h3>Go to user profile</h3>
+        <router-link to="/user">User Profile</router-link>
+      </div>
     </div>
-  </div>
+
 </template>
+
 <script>
-export default{
-  data(){
+export default {
+  data() {
     return {
       topics: [
         { title: "Vue.js 3 Set up", description: "Learn how to set up Vue.js 3 in your project." },
@@ -43,7 +46,7 @@ export default{
   margin-bottom: 40px;
 }
 
-.card{
+.card {
   background-color: #6cb983;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -59,7 +62,7 @@ export default{
   margin-bottom: 10px;
 }
 
-.card p{
+.card p {
   font-size: 0.9rem;
   color: #111111;
 }
